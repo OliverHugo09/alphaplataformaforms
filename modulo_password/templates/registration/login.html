@@ -1,0 +1,90 @@
+{% extends 'registration/main.html' %}
+
+{% block content %}
+
+    <div class="container-form text-center">
+        <h3>Acceder</h3>
+        <hr>
+        <div class="login-container">
+            {% if form.errors %}
+            <div class="alert alert-danger"><p>Tu usuario y contraseña no coinciden. Por favor intenta otra vez.</p></div>
+            {% endif%}
+            <form action="" id="form-login" method="post">
+                {% csrf_token %}
+                <div id="username">
+                    <p>Usuario</p>
+                    {{ form.username }}
+                </div>
+                <div id="password">
+                    <p>Contraseña</p>
+                    {{ form.password }}
+                </div>
+                <button id="btn-registrar" class="btn btn-outline-secondary">Ingresar</button>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "/css/bootstrap.min.css" %}'>
+    <link rel="stylesheet" href='{% static "/custom/login.css" %}'>
+    <title>Document</title>
+</head>
+<body class="text-center">
+    <div class="container-form text-center">
+        <h3>Acceder</h3>
+        <hr>
+        <div class="login-container">
+            {% if form.errors %}
+            <div class="alert alert-danger"><p>Tu usuario y contraseña no coinciden. Por favor intenta otra vez.</p></div>
+            {% endif%}
+            <form action="" id="form-login" method="post">
+                {% csrf_token %}
+                <div id="username">
+                    <p>Usuario</p>
+                    {{ form.username }}
+                </div>
+                <div id="password">
+                    <p>Contraseña</p>
+                    {{ form.password }}
+                </div>
+                <button id="btn-registrar" class="btn btn-outline-secondary">Ingresar</button>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
